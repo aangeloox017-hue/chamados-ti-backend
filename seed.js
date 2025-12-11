@@ -1,7 +1,7 @@
 // seed.js - cria usuário TI inicial
-const Database = require('better-sqlite3');
+const sqlite3 = require("sqlite3").verbose();
 const bcrypt = require('bcrypt');
-const db = new Database('chamados.db');
+const db = new sqlite3.Database("./chamados.db");
 async function run() {
   const hash = await bcrypt.hash('Senha123!', 10);
   try {
